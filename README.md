@@ -138,7 +138,7 @@ b2.getUploadUrl({
 b2.uploadFile({
     uploadUrl: 'uploadUrl',
     uploadAuthToken: 'uploadAuthToken',
-    fileName: 'fileName',
+    fileName: `${bucket-filename-prefix}fileName`, // If you do not add your file prefix you will receive 401 - 'Unauhorized' for no reason, it returns in b2.authorize() response allowed instances
     contentLength: 0, // optional data length, will default to data.byteLength or data.length if not provided
     mime: '', // optional mime type, will default to 'b2/x-auto' if not provided
     data: 'data', // this is expecting a Buffer, not an encoded string
